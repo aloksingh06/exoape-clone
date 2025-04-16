@@ -4,5 +4,13 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/exoape/',
+  base: '/',
+  server: {
+    historyApiFallback: true,
+  },
+  resolve: {
+    alias: {
+      '@': '/src', // Ensure this points to your 'src' folder
+    },
+  },
 })
